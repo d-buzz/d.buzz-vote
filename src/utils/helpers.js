@@ -2,13 +2,21 @@ import hive from '@hiveio/hive-js'
 
 hive.api.setOptions({ url: 'https://api.hive.blog' })
 
-export const voteWithKeychain = (username, setIsProposalVoted) => {
+export const voteWithKeychain = (
+	username,
+	setIsProposalVoted,
+	setErrorMessage,
+	) => {
 	// Approve a proposal
 	if (window.hive_keychain) {
 		const keychain = window.hive_keychain
 		keychain.requestUpdateProposalVote(username, JSON.stringify([249]), true, JSON.stringify([]), (response) => {
-			console.log(response)
-			setIsProposalVoted(true)
+			const { success, message } = response
+			if(success) {
+				setIsProposalVoted(true)
+			} else {
+				setErrorMessage(message)
+			}
 		})
 	} else {
 		alert('You do not have hive keychain installed')
