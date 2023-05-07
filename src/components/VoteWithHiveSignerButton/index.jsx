@@ -5,7 +5,7 @@ const VoteWithHiveSignerButton = ({ styles }) => {
 
 
 	const handleVoteWithHiveSigner = () => [
-		window.open('https://hivesigner.com/sign/update_proposal_votes?proposal_ids=[249]&approve=true')
+		window.open('https://hivesigner.com/sign/update_proposal_votes?proposal_ids=[263]&approve=true')
 	]
 
 	return (
