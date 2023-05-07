@@ -7,7 +7,7 @@ const VoteWithKeychainButton = ({ styles, username, setErrorMessage, setIsPropos
 
 	const handleVoteWithKeychain = () => {
 		if(username) {
-			voteWithKeychain(username, setIsProposalVoted, setErrorMessage)
+			voteWithKeychain(username.toLowerCase(), setIsProposalVoted, setErrorMessage)
 		} else {
 			setErrorMessage('Please enter your username')
 		}
