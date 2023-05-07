@@ -10,7 +10,7 @@ export const voteWithKeychain = (
 	// Approve a proposal
 	if (window.hive_keychain) {
 		const keychain = window.hive_keychain
-		keychain.requestUpdateProposalVote(username, JSON.stringify([249]), true, JSON.stringify([]), (response) => {
+		keychain.requestUpdateProposalVote(username, JSON.stringify([263]), true, JSON.stringify([]), (response) => {
 			const { success, message } = response
 			if(success) {
 				setIsProposalVoted(true)
