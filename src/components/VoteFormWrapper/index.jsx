@@ -26,6 +26,10 @@ const VoteFormWrapper = () => {
 		}
 	}, [isProposalVoted])
 
+	const handleRedirectToProposal = () => {
+		return window.location = 'https://peakd.com/proposals/263'
+	}
+
 	return (
 		<div className='max-h-[950px] md:w-[80%] lg:w-[80%] max-w-[1000px] md:rounded-2xl lg:rounded-2xl md:shadow-md lg:shadow-md overflow-hidden'>
 			<div className='w-[100%] h-fit'>
@@ -36,7 +40,8 @@ const VoteFormWrapper = () => {
 				?
 				<div className='mt-12 mb-12 w-full flex flex-col items-center'>
 					<span className='mb-4 text-2xl uppercase font-medium'>Vote for the proposal</span>
-					<input className='font-medium text-lg mb-4 p-2 w-[300px] border-2 border-gray-400 focus:border-gray-950 outline-none rounded-lg transition-colors' type="text" placeholder='username' value={username} onChange={(e) => setUsername(e.target.value.toLowerCase())} />
+					<input className='font-medium text-lg mb-4 p-2 w-[300px] border-2 border-gray-400 focus:border-gray-950 outline-none rounded-lg transition-colors' type="text" placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)} />
+					<button className='mb-6 pl-2 pr-2 pt-[5px] pb-[5px] bg-gray-700 rounded-lg text-white hover:bg-opacity-80' onClick={handleRedirectToProposal}>View Proposal</button>
 					<VoteWithKeychainButton styles='h-[70px]' username={username} setErrorMessage={setErrorMessage} setIsProposalVoted={setIsProposalVoted}/>
 					<VoteWithHiveSignerButton styles='h-[70px]'/>
 					{
