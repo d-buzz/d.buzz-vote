@@ -41,7 +41,6 @@ const VoteFormWrapper = () => {
 				<div className='mt-12 mb-12 w-full flex flex-col items-center'>
 					<span className='mb-4 text-2xl uppercase font-medium'>Vote for the proposal</span>
 					<input className='font-medium text-lg mb-4 p-2 w-[300px] border-2 border-gray-400 focus:border-gray-950 outline-none rounded-lg transition-colors' type="text" placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)} />
-					<button className='mb-6 pl-2 pr-2 pt-[5px] pb-[5px] bg-gray-700 rounded-lg text-white hover:bg-opacity-80' onClick={handleRedirectToProposal}>View Proposal</button>
 					<VoteWithKeychainButton styles='h-[70px]' username={username} setErrorMessage={setErrorMessage} setIsProposalVoted={setIsProposalVoted}/>
 					<VoteWithHiveSignerButton styles='h-[70px]'/>
 					{
@@ -51,6 +50,8 @@ const VoteFormWrapper = () => {
 							<span className='rounded-lg p-2 pl-4 pr-4 text-lg text-white font-medium bg-[#E61C34]'>{errorMessage}</span>
 						</div>
 					}
+					<span className='mt-4 mb-4 h-[1px] w-[300px] md:w-[350px] lg:w-[350px] bg-slate-400'/>
+					<button className='mb-4 pl-2 pr-2 pt-[5px] pb-[5px] bg-gray-700 rounded-lg text-white text-lg hover:bg-opacity-80' onClick={handleRedirectToProposal}>View Proposal</button>
 				</div>
 				:
 				<div className='w-full h-[350px] flex flex-col justify-center items-center'>
