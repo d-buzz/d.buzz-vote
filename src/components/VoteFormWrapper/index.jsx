@@ -40,7 +40,7 @@ const VoteFormWrapper = () => {
 				?
 				<div className='mt-12 mb-12 w-full flex flex-col items-center'>
 					<span className='mb-4 text-2xl uppercase font-medium'>Vote for the proposal</span>
-					<input className='font-medium text-lg mb-4 p-2 w-[300px] border-2 border-gray-400 focus:border-gray-950 outline-none rounded-lg transition-colors' type="text" placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)} />
+					<input className='font-medium text-lg mb-4 p-2 w-[300px] border-2 border-gray-400 focus:border-gray-950 outline-none rounded-lg transition-colors' type="text" placeholder='username' value={'@'+username} onChange={(e) => setUsername(e.target.value.replace('@', ''))} />
 					<VoteWithKeychainButton styles='h-[70px]' username={username} setErrorMessage={setErrorMessage} setIsProposalVoted={setIsProposalVoted}/>
 					<VoteWithHiveSignerButton styles='h-[70px]'/>
 					{
