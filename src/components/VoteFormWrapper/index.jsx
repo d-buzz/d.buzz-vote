@@ -4,12 +4,15 @@ import DBuzzProposalBanner from '../../assets/dbuzz-proposal.png'
 import DoneIcon from '../../assets/done-icon.svg'
 import VoteWithHiveSignerButton from '../VoteWithHiveSignerButton'
 import party from "party-js"
-
+const isMobileDevice = () => {
+	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
+}
 const VoteFormWrapper = () => {
 
 	const [username, setUsername] = useState('')
 	const [errorMessage, setErrorMessage] = useState('')
 	const [isProposalVoted, setIsProposalVoted] = useState(false)
+	const [isMobile, setIsMobile] = useState(isMobileDevice());
 
 	useEffect(() => {
 		if(errorMessage) {
@@ -41,7 +44,9 @@ const VoteFormWrapper = () => {
 				<div className='mt-12 mb-12 w-full flex flex-col items-center'>
 					<span className='mb-4 text-2xl uppercase font-medium'>Vote for the proposal</span>
 					<input className='font-medium text-lg mb-4 p-2 w-[300px] border-2 border-gray-400 focus:border-gray-950 outline-none rounded-lg transition-colors' type="text" placeholder='username' value={'@'+username} onChange={(e) => setUsername(e.target.value.replace('@', ''))} />
-					<VoteWithKeychainButton styles='h-[70px]' username={username} setErrorMessage={setErrorMessage} setIsProposalVoted={setIsProposalVoted}/>
+					{
+						!isMobile && <VoteWithKeychainButton styles='h-[70px]' username={username} setErrorMessage={setErrorMessage} setIsProposalVoted={setIsProposalVoted}/>
+					}
 					<VoteWithHiveSignerButton styles='h-[70px]'/>
 					{
 						errorMessage
