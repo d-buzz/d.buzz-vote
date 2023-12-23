@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import VoteWithKeychainButton from '../VoteWithKeychainButton'
-import DBuzzProposalBanner from '../../assets/dbuzz-proposal.jpeg'
+import DBuzzProposalBanner from '../../assets/dbuzz-proposal-2'
 import DoneIcon from '../../assets/done-icon.svg'
 import VoteWithHiveSignerButton from '../VoteWithHiveSignerButton'
 import party from "party-js"
