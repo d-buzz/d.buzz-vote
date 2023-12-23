@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import VoteWithKeychainButton from '../VoteWithKeychainButton'
-import DBuzzProposalBanner from '../../assets/dbuzz-proposal.png'
+// import DBuzzProposalBanner from '../../assets/dbuzz-proposal.png'
 import DoneIcon from '../../assets/done-icon.svg'
 import VoteWithHiveSignerButton from '../VoteWithHiveSignerButton'
 import party from "party-js"
@@ -33,7 +33,7 @@ const VoteFormWrapper = () => {
 	return (
 		<div className='max-h-[950px] md:w-[80%] lg:w-[80%] max-w-[1000px] md:rounded-2xl lg:rounded-2xl md:shadow-md lg:shadow-md overflow-hidden'>
 			<div className='w-[100%] h-fit'>
-				<img className='pointer-events-none object-cover' src={DBuzzProposalBanner} alt="dbuzz banner" />
+				<img className='pointer-events-none object-cover' src={'https://images.hive.blog/0x0/https://files.peakd.com/file/peakd-hive/dbuzz/AKWuT7VM2E3wBdooH237UspMNqJd5CBMBjvrjLDquiy5MhRck4AXFMdkn4dnocL.jpg'} alt="dbuzz banner" />
 			</div>
 			{
 				!isProposalVoted
