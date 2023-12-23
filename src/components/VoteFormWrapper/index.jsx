@@ -27,7 +27,7 @@ const VoteFormWrapper = () => {
 	}, [isProposalVoted])
 
 	const handleRedirectToProposal = () => {
-		return window.location = 'https://peakd.com/proposals/263'
+		return window.location = 'https://peakd.com/proposals/294'
 	}
 
 	return (
